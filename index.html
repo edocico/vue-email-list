@@ -9,7 +9,13 @@
     <title>Vue Email List</title>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+      {{ message }}
+
+      <ul class="mailing-list">
+        <li v-for="(address, index) in mailList" :key="index">{{ address }}</li>
+      </ul>
+    </div>
 
     <script src="./js/app.js"></script>
   </body>
