@@ -10,10 +10,16 @@
   </head>
   <body>
     <div id="app">
-      {{ message }}
+      <h1>{{ message }}</h1>
 
       <ul class="mailing-list">
-        <li v-for="(address, index) in mailList" :key="index">{{ address }}</li>
+        <li
+          v-for="(address, index) in mailList"
+          :key="index"
+          v-show="mailList.length === 10"
+        >
+          {{ address }}
+        </li>
       </ul>
     </div>
 
