@@ -12,14 +12,8 @@
     <div id="app">
       <h1>{{ message }}</h1>
 
-      <ul class="mailing-list">
-        <li
-          v-for="(address, index) in mailList"
-          :key="index"
-          v-show="mailList.length === 10"
-        >
-          {{ address }}
-        </li>
+      <ul v-if="mailList.length === maxEmailsNumber" class="mailing-list">
+        <li v-for="(address, index) in mailList" :key="index">{{ address }}</li>
       </ul>
     </div>
 
